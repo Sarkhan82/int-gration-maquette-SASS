@@ -1,6 +1,6 @@
 .main {
     max-width: 85%;
-    background: white;
+    background: $white1;
     margin: 0 auto 30px;
 
     img {
@@ -11,23 +11,40 @@
     width: 80%;
     margin: 0 auto;
 
-    h4 {
+    span {
         font-family: $font2;
         font-style: oblique;
-        padding: 30px;
-        margin: 0 auto;
+        padding: 70px 0;
+        display: block;
+        position: relative;
+
+        &::before, &::after {
+            content: "";
+            position: absolute;
+            width: 37%;
+            height: 1px;
+            background-color: $grey3;
+            top: 50%;
+            transform: translateY(-50%);
+        } &::before {
+            right: 0;
+        } &::after {
+            left: 0;
+        }
+
     }
     h1 {
         margin: 0 auto;
         max-width: 40%;
-        padding: 15px 0;
+        padding: 40px 0;
     }
     p {
         max-width: 40%;
         font-family: $font2;
         font-style: oblique;
         margin: 0 auto;
-        padding: 15px 0;
+        padding: 40px 0;
+        line-height: 35px;
     }
     button  {
         margin: 50px 0;
@@ -36,32 +53,38 @@
 .part2 {
     display: grid;
     grid-template-columns: 50% 50%;
-    border-top: 1px solid grey;
+    border-top: 1px solid $grey3;
 
-    h4 {
+    span {
         font-family: $font2;
         font-style: oblique;
-        padding: 30px;
         margin: 0 auto;
+        font-size: 1rem;
+        display: block;
+        padding: 50px;
     }
     h1 {
         margin: 0 auto;
-        max-width: 40%;
-        padding: 15px 0;
+        max-width: 60%;
+        padding-bottom: 50px;
+        font-size: 2rem;
     }
     p {
         font-family: $font2;
         margin: 0 auto;
-        padding: 15px 0;
         text-align: left;
+        padding-top: 50px;
+        font-size: 1.2rem;
+        line-height: 35px;
+        
     }
     button  {
-        margin: 50px 0;
+        margin: 80px 0;
     }
 }
 .p2-left {
     padding: 0 60px;
-    border-right: 1px solid grey;
+    border-right: 1px solid $grey3;
 }
 .p2-right {
     margin: 0 auto;

@@ -9,9 +9,13 @@
 
 $font1: inter, sans-serif;
 $font2: merri, serif;
-$color1: black;
-$color2: white;
-$color3: grey;
+$black1: black;
+$black2: rgb(107, 107, 107);
+$white1: white;
+$white2: rgb(244, 244, 244);
+$grey1: rgba(187, 187, 187, 0.245);
+$grey2: rgba(242, 242, 242, 0.97);
+$grey3: rgba(208, 207, 207, 0.918);
 
 
 @mixin center {
@@ -33,9 +37,11 @@ $color3: grey;
     text-decoration: none;
 }
 body {
-    height: 100vh;
-    background: url(../images/bg.jpg) center fixed;
+    background: url(../images/bg.jpg) fixed center/cover;
     text-align: center;
+    font-family: $font2;
+    max-width: 1300px;
+    margin: 0 auto;
 }
 h1 {
     @include title
@@ -44,6 +50,12 @@ h1 {
 button {
     @include title
     background: none;
-    border: 2px solid $color1;
+    border: 2px solid $black1;
     padding: 10px 20px;
+    &:hover {
+        color: $white1;
+        border: 2px solid $white1;
+        background-color: $black1;
+        cursor: pointer;
+    }
 }

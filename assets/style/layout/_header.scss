@@ -1,7 +1,7 @@
 header {
     position: relative;
     min-height: 100vh;
-    color: $color2;
+    color: $white2;
 
     .header-content {
         @include center;
@@ -12,12 +12,12 @@ header {
 
     h1{
         font-size: 4.8rem;
-        max-width: 40%;
+        max-width: 60%;
         margin-bottom: 50px;
     }
     p{
         font-family: $font2;
-        font-size: 0.8rem;
+        font-size: 1rem;
         font-style: oblique;
     }
     nav{
@@ -28,7 +28,7 @@ header {
         min-width: 85%;
         left: 50%;
         transform: translateX(-50%);
-        background-color: $color3;
+        background-color: $grey1;
         bottom: 0;
 
         ul {
@@ -38,9 +38,15 @@ header {
         }
         .left {
             li {
-                @include title
+                @include title;
                 padding: 0 25px;
 
+                &:hover {
+                    background: $white1;
+                    color: $black1;
+                    cursor: pointer;
+                    padding: 20px;
+                }
             }
         }
         .right {
@@ -48,7 +54,13 @@ header {
             min-width: 100px;
             max-width: 300px;
             width: 25%;
-
+            li {
+                font-size: 1.1rem;
+                &:hover {
+                    color: aqua;
+                    cursor: pointer;
+                }
+            }
         }
     }
 }

@@ -1,0 +1,54 @@
+header {
+    position: relative;
+    min-height: 100vh;
+    color: $color2;
+
+    .header-content {
+        @include center;
+        flex-direction: column;
+        min-height: 100vh;
+    }
+
+
+    h1{
+        font-size: 4.8rem;
+        max-width: 40%;
+        margin-bottom: 50px;
+    }
+    p{
+        font-family: $font2;
+        font-size: 0.8rem;
+        font-style: oblique;
+    }
+    nav{
+        display: flex;
+        justify-content: space-between;
+        z-index: 100;
+        position: absolute;
+        min-width: 85%;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: $color3;
+        bottom: 0;
+
+        ul {
+            display: flex;
+            align-items: center;
+            height: 65px;
+        }
+        .left {
+            li {
+                @include title
+                padding: 0 25px;
+
+            }
+        }
+        .right {
+            justify-content: space-around;
+            min-width: 100px;
+            max-width: 300px;
+            width: 25%;
+
+        }
+    }
+}

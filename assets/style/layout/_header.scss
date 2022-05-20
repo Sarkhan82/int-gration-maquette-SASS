@@ -1,64 +1,109 @@
 header {
     position: relative;
     min-height: 100vh;
-    color: $white2;
+    color: $white1;
 
     .header-content {
         @include center;
         flex-direction: column;
         min-height: 100vh;
-    }
+        opacity: 0;
+        transform: translateY(40px);
+        animation: headerAnim 1.5s forwards;
 
+        @keyframes headerAnim {
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            
+        }
+        h1{
+            @include title;
+            font-size: 4rem;
+            letter-spacing: 6px;
 
-    h1{
-        font-size: 4.8rem;
-        max-width: 60%;
-        margin-bottom: 50px;
+            @media screen and (max-width: 700px) {
+                font-size: 2rem;
+            }
+        }
+        p{
+            margin: 40px auto 60px;
+            font-style: italic;
+            width: 85%;
+        }
+        span {
+            border: 2px solid $white1;
+            border-radius: 50px;
+            height: 60px;
+            width: 60px;
+            font-size: 1.2rem;
+            @include center
+        }
     }
-    p{
-        font-family: $font2;
-        font-size: 1rem;
-        font-style: oblique;
-    }
-    nav{
+    nav {
         display: flex;
         justify-content: space-between;
+        background-color: rgba(255,255,255, 0.253);
+        color: $white1;
+        width: 85%;
+        height: 65px;
         z-index: 100;
         position: absolute;
-        min-width: 85%;
+        bottom: 0;
         left: 50%;
         transform: translateX(-50%);
-        background-color: $grey1;
-        bottom: 0;
 
         ul {
             display: flex;
             align-items: center;
-            height: 65px;
         }
-        .left {
+        .nav-left {
+            &:hover li:not(:hover) {
+                background: none;
+                color: $white1;
+            }
             li {
                 @include title;
-                padding: 0 25px;
+                font-size: 0.7rem;
+                padding: 0 15px;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                cursor: pointer;
 
+                @media screen and (max-width: 700px) {
+                    font-size: 0.5rem;
+                }
+
+                &:first-child {
+                    background: $white1;
+                    color: $black1;
+                }
                 &:hover {
                     background: $white1;
                     color: $black1;
-                    cursor: pointer;
                     padding: 20px;
                 }
             }
         }
-        .right {
+        .nav-right {
+            font-size: 1.1rem;
             justify-content: space-around;
             min-width: 100px;
             max-width: 300px;
             width: 25%;
+            margin-right: 10px;
+
+            @media screen and (max-width: 700px) {
+                display: none;
+            }
+
             li {
-                font-size: 1.1rem;
+                transition: 0.15s;
+                cursor: pointer;
                 &:hover {
-                    color: aqua;
-                    cursor: pointer;
+                    transform: scale(1.3);
                 }
             }
         }
